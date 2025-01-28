@@ -29,7 +29,7 @@
     ],
     "servers": [
       {
-        "address": "tcp://8.8.8.8",
+        "address": "https://208.67.222.222/dns-query",
         "address_resolver": "local-dns",
         "detour": "proxy",
         "tag": "proxy-dns"
@@ -44,7 +44,7 @@
         "tag": "block"
       },
       {
-        "address": "tcp://8.8.8.8",
+        "address": "direct-dns",
         "detour": "direct",
         "tag": "direct-dns"
       }
@@ -85,10 +85,7 @@
       "outbounds": [
         "auto",
         "direct",
-        "ًں‡¸ًں‡ھ (0)",
-        "1.ًں‡¸ًں‡ھ (1)",
-        "2.ًں‡¸ًں‡ھ (2)",
-        "3.ًں‡¸ًں‡ھ (3)"
+        "Telegram\u0026YouTube:@Mikronet_plus"
       ],
       "tag": "proxy",
       "type": "selector"
@@ -96,10 +93,7 @@
     {
       "interval": "10m",
       "outbounds": [
-        "ًں‡¸ًں‡ھ (0)",
-        "1.ًں‡¸ًں‡ھ (1)",
-        "2.ًں‡¸ًں‡ھ (2)",
-        "3.ًں‡¸ًں‡ھ (3)"
+        "Telegram\u0026YouTube:@Mikronet_plus"
       ],
       "tag": "auto",
       "tolerance": 50,
@@ -120,65 +114,15 @@
     },
     {
       "obfs": {
-        "password": "44506df0d5415cc2",
+        "password": "Telegram:Mikronet_pluss",
         "type": "salamander"
       },
-      "password": "4acfec01ca2b3878",
-      "server": "109.120.135.123",
-      "server_port": 32121,
-      "tag": "ًں‡¸ًں‡ھ (0)",
+      "password": "Telegram:Mikronet-plus",
+      "server": "mikronetplus.mikronetplus.store",
+      "server_port": 3678,
+      "tag": "Telegram\u0026YouTube:@Mikronet_plus",
       "tls": {
-        "enabled": true,
-        "insecure": true,
-        "server_name": "www.google.com"
-      },
-      "type": "hysteria2"
-    },
-    {
-      "obfs": {
-        "password": "44506df0d5415cc2",
-        "type": "salamander"
-      },
-      "password": "4acfec01ca2b3878",
-      "server": "2a01:e5c0:65a8::2",
-      "server_port": 32121,
-      "tag": "1.ًں‡¸ًں‡ھ (1)",
-      "tls": {
-        "enabled": true,
-        "insecure": true,
-        "server_name": "www.google.com"
-      },
-      "type": "hysteria2"
-    },
-    {
-      "obfs": {
-        "password": "ec7f78f124654d9b",
-        "type": "salamander"
-      },
-      "password": "ec9d69faefeb3447",
-      "server": "103.249.134.26",
-      "server_port": 23411,
-      "tag": "2.ًں‡¸ًں‡ھ (2)",
-      "tls": {
-        "enabled": true,
-        "insecure": true,
-        "server_name": "www.google.com"
-      },
-      "type": "hysteria2"
-    },
-    {
-      "obfs": {
-        "password": "ec7f78f124654d9b",
-        "type": "salamander"
-      },
-      "password": "ec9d69faefeb3447",
-      "server": "2a01:e5c0:65a7::2",
-      "server_port": 23411,
-      "tag": "3.ًں‡¸ًں‡ھ (3)",
-      "tls": {
-        "enabled": true,
-        "insecure": true,
-        "server_name": "www.google.com"
+        "enabled": true
       },
       "type": "hysteria2"
     }
@@ -197,9 +141,23 @@
       {
         "download_detour": "direct",
         "format": "binary",
+        "tag": "geosite-private",
+        "type": "remote",
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/private.srs"
+      },
+      {
+        "download_detour": "direct",
+        "format": "binary",
         "tag": "geosite-ir",
         "type": "remote",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/category-ir.srs"
+      },
+      {
+        "download_detour": "direct",
+        "format": "binary",
+        "tag": "geoip-private",
+        "type": "remote",
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/private.srs"
       },
       {
         "download_detour": "direct",
@@ -225,6 +183,8 @@
       {
         "outbound": "direct",
         "rule_set": [
+          "geoip-private",
+          "geosite-private",
           "geosite-ir",
           "geoip-ir"
         ]
